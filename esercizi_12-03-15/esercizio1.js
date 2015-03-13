@@ -9,7 +9,7 @@
 
 
   var x = {size: 5};
-  var y = {size: 5};
+  var y = {size: 3};
 
   larger(x, y);    
 }());
