@@ -7,14 +7,9 @@
     }
   };
 
-  function Numero(numero) {
 
-this.size = numero;
-
-  }
-
-  var x = new Numero(5);
-  var y = new Numero(2);
+  var x = {size: 5};
+  var y = {size: 5};
 
   larger(x, y);    
 }());
