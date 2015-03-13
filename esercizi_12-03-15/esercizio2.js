@@ -19,12 +19,7 @@
     return { play: max_played, index: max_index };
   };
 
-
-  function Album(times) {
-    this.played = times;
-  }
-
-  var music = [new Album(3), new Album(7), new Album(2)];
+  var music = [{played: 3}, {played: 7}, {played: 2}];
 
   var fav = favorite_album( music );
 
