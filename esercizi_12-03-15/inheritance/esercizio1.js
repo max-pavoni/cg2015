@@ -1,8 +1,9 @@
 //ESERCIZIO 1a
 
-function Door() {
+//se non viene riconosciuto il parametro passato, state viene settato a closed
+function Door(state) {
 
-this.state = "closed";
+this.state = state || "closed";
 
 }
 
@@ -12,12 +13,13 @@ Door.prototype.close = function() {this.state = "closed"};
 
 //ESERCIZIO 1b
 
-function SecurityDoor() {
-	Door.call(this);
+function SecurityDoor(state) {
+	Door.call(this, state);
 	this.locked = false;
 }
 
 SecurityDoor.prototype = Object.create(Door.prototype);
+SecurityDoor.prototype.constructor = SecurityDoor;
 
 SecurityDoor.prototype.open = function() {
 								if(this.locked === true)
@@ -25,6 +27,7 @@ SecurityDoor.prototype.open = function() {
 								else
 									Door.prototype.open.call(this);
 }
+
 
 SecurityDoor.prototype.lock = function() {
 								if(this.state === "closed")
